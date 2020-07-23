@@ -1,0 +1,23 @@
+h1{
+    text-align: center;
+    font-family: Arial;
+    font-weight: lighter;
+}
+table{
+    margin-top: 50px;
+    font-family: Arial;
+    text-align: center;
+    background-color: #ffffff;
+    padding: 20px;
+    font-weight: lighter;
+}
+#display th, #display td{
+    padding: 20px;
+}
+tr{
+    transition: all .25s ease-in-out
+}
+tr :hover {
+    background-color: #EEEE;
+    cursor: pointer;
+}

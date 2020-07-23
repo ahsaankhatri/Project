@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel= "stylesheet" href = "styling.css">
+    <title>Employee Details</title>
+    <h1>Employee Details</h1>
+</head>
+<body>
+        <center>
+        <table border = "1">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <td><input type="text" name= "Name" id = "name"></td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>Age</th>
+                <td><input type="text" name= "Age" id = "age"></td>
+            </tr>
+            <tr>
+                <th>Designation</th>
+                <td><input type="text" name= "Deg" id = "deg"></td>
+            </tr>
+            <tr>
+                <th>Salary</th>
+                <td><input type="text" name= "Salary" id = "sal"></td>
+            </tr>
+            <center>
+            <tr id = "addEmp">
+                <td>
+                    <input type="button" name ="addemp" id = "addEmp" value = "Add Employee" onclick="ADDEMP()">
+                </td>
+            </tr>
+            <tr id = "dlt">
+                <td>
+                    <input type="button" name="dlt" id = "dlt" value="Delete Employee" onclick="DELETE()">
+                </td>
+            </tr>
+            </center>
+        </tbody>
+        </table>
+    </center>
+        <center>
+        <table border = "1" id= "display">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Designation</th>
+                    <th>Salary</th>
+                </tr>
+            </thead>
+        </table>
+    </center>
+    <script>
+        var indx, table= document.getElementById("display");
+
+
+        function ADDEMP(){
+            var empData = document.getElementById("display");
+            var AddData = empData.insertRow(empData.length);
+
+            var cell1 = AddData.insertCell(0);
+            var cell2 = AddData.insertCell(1);
+            var cell3 = AddData.insertCell(2);
+            var cell4 = AddData.insertCell(3);
+
+            name = document.getElementById("name").value;
+            age = document.getElementById("age").value;
+            deg = document.getElementById("deg").value;
+            sal = document.getElementById("sal").value;
+
+            cell1.innerHTML = name;
+            cell2.innerHTML = age;
+            cell3.innerHTML = deg;
+            cell4.innerHTML = sal;
+            
+
+            document.getElementById("name").value = "";
+            document.getElementById("age").value = "";
+            document.getElementById("deg").value = "";
+            document.getElementById("sal").value = "";
+
+            showInput();   
+        }
+
+        function showInput()
+        {
+            for (var i= 1; i < table.rows.length ; i++)
+            {
+                table.rows[i].onclick =function()
+                {
+                    indx = this.rowIndex;
+                    document.getElementById("name").value = this.cells[0].innerHTML;
+                    document.getElementById("age").value = this.cells[1].innerHTML;
+                    document.getElementById("deg").value = this.cells[2].innerHTML;
+                    document.getElementById("sal").value = this.cells[3].innerHTML;
+                };
+            }
+        }
+        function DELETE()
+        {
+            table.deleteRow(indx);
+
+            document.getElementById("name").value = "";
+            document.getElementById("age").value = "";
+            document.getElementById("deg").value = "";
+            document.getElementById("sal").value = "";
+        }
+    </script>
+   </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+    <link rel="stylesheet" href="Login.css">
+    <script src="Login.js"></script>
+</head>
+<body>
+        <h3>
+            Login Here
+        </h3>
+        <form action="addData.html" method="POST" id="logForm">
+            <label style="text-align: left;">Username:</label>
+
+            <table>
+                <tr>
+                    <td>
+                        <input type="text" name="user" id="user_name">
+                    </td>
+                </tr>
+            </table>
+
+            <label style="text-align: left;">Password:</label>
+            <table>
+                <tr>
+                    <td>
+                        <input type="password" name="pass" id="passd">
+                    </td>
+                </tr>
+            </table>
+            <table id="bt">
+                <tr>
+                    <td>
+                        <input type="button" value="Login" id="login" onclick="Enter()">
+                    </td>
+                </tr>
+            </table>   
+        </form>
+</body>
+</html>
